@@ -373,5 +373,25 @@ assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
 
 assert.ifError = function(err) { if (err) {throw err;}};
 
+assert.listEqual = function (actual, expected, message) {
+  function f() {
+    fail(actual, expected, message, '==', assert.listEqual);
+  }
+  if (!actual) {
+    if (actual != expected)
+      f();
+  }
+  else if (!expected)
+    f();
+
+  else if (actual.length !== expected.length)
+    f();
+
+  else
+    for (var i = 0, l = actual.length; i < l; i += 1)
+      if (actual[i] !== expected[i])
+        f();
+};
+
 })(this);
 
