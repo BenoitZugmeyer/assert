@@ -1,3 +1,10 @@
+# about this fork
+
+This is a fork of [Jxck's assert.js](https://github.com/Jxck/assert) containing
+some additionnal features aimed to ease DOM testing in browser environments.
+This is a work in progress, please use Jxck's version if you want a stable
+project.
+
 # assert.js
 
 assert.js is a port of the Node.js standard assertion library for the browser.
