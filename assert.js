@@ -92,6 +92,13 @@ function replacer(key, value) {
   if (typeof value === 'function' || value instanceof RegExp) {
     return value.toString();
   }
+  if (value && value.nodeType) {
+    if (value.outerHTML) {
+      return value.outerHTML;
+    } else {
+      return '[Element ' + value.tagName + ']';
+    }
+  }
   return value;
 }
 
